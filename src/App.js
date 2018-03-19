@@ -18,6 +18,10 @@ this.state = {
   fontFamily: 'Comic Sans MS'
 }
 this.updateColor = this.updateColor.bind(this)
+this.updateSize = this.updateSize.bind(this)
+this.updateFamily = this.updateFamily.bind(this)
+
+
 
 }
   // updateColor
@@ -26,11 +30,12 @@ updateColor(val){
 }
   // updateSize
 updateSize(val){
+  this.setState({fontSize:val})
 
 }
   // updateFamily
-updateFamily(){
-this.setState
+updateFamily(val){
+this.setState({fontFamily:val})
 }
   // updateEditStatus
 updateEditStatus(){
@@ -42,8 +47,8 @@ updateEditStatus(){
         <div className="headerBar">
           <EditToggle />
           <ColorChanger fontColor={this.state.fontColor}update={this.updateColor}/>
-          { /* Render SizeChanger */ }
-          { /* Render FamilyChanger */ }
+          <SizeChanger fontSize={this.state.fontSize} update={this.updateSize}/>
+         <FamilyChanger fontFamily={this.state.fontFamily} update={this.updateFamily}/>
         </div>
         <div className="textArea">
            <TextContainer 

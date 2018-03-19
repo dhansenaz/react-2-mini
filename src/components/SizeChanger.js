@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 
-export default class SizeChanger extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      allowEdit: this.props.allowEdit
-    };
-  }
+export default function SizeChanger(props) {
+ 
 
-  // componentWillReceiveProps
-
-  render() {
+   
     return (
-      <select className="dropDownContainer">
+      <select className="dropDownContainer" value={props.fontSize}
+      onChange={event => props.update(event.target.value)}>
         <option value="12"> 12 </option>
         <option value="13"> 13 </option>
         <option value="14"> 14 </option>
       </select>
     )
   }
-}
