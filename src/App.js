@@ -14,21 +14,23 @@ constructor(){
 this.state = {
   allowEdit: true,
   fontColor: 'red',
-  fontSize: 22,
-  fontFamily: 'Copperplate'
+  fontSize: 12,
+  fontFamily: 'Comic Sans MS'
 }
+this.updateColor = this.updateColor.bind(this)
 
 }
   // updateColor
-updateColor()
-{}
+updateColor(val){
+  this.setState({fontColor: val})
+}
   // updateSize
-updateSize(){
+updateSize(val){
 
 }
   // updateFamily
 updateFamily(){
-
+this.setState
 }
   // updateEditStatus
 updateEditStatus(){
@@ -38,8 +40,8 @@ updateEditStatus(){
     return (
       <div>
         <div className="headerBar">
-          { /* Render EditToggle */ }
-          { /* Render ColorChanger */ }
+          <EditToggle />
+          <ColorChanger fontColor={this.state.fontColor}update={this.updateColor}/>
           { /* Render SizeChanger */ }
           { /* Render FamilyChanger */ }
         </div>
